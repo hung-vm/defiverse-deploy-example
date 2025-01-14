@@ -1,0 +1,16 @@
+{
+  "contracts": {
+    "DProxyAdmin": "",
+    "DogToken": {
+      "proxy": "",
+      "impl": ""
+    }
+  },
+  "mapping": {},
+  "roles": {
+    "DogToken": {
+      "MINTER_ROLE": []
+    }
+  },
+  "config": {}
+}
