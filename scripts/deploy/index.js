@@ -1,5 +1,4 @@
 const path = require("path");
-const ethers = require("ethers");
 const hre = require("hardhat");
 const { ContractDeployerWithHardhat } = require("@evmchain/contract-deployer");
 
@@ -25,26 +24,15 @@ async function deployAll() {
   await contractDeployer.deployAllManifests({
     args: {
       DProxyAdmin: {},
-      DogToken: {
-        initArgs: ["soneium dog", "soneium dog"],
+      TestToken: {
+        initArgs: ["TEST", "TEST"],
       },
     },
   });
 
   // Grant roles
   await contractDeployer.grantRoles();
-  await mint(contractDeployer);
 }
-
-const mint = async (contractDeployer) => {
-  console.log("===mint");
-  const dogToken = await contractDeployer.loadContract("DogToken");
-  const rs = await dogToken.mint(
-    "0x0d01d06C41B325CeaA64eA87F4909A5C64aC7182",
-    "1000000000000000000000000000"
-  );
-  console.log("rs:", rs);
-};
 
 async function main() {
   await deployAll();

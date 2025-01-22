@@ -1,0 +1,16 @@
+{
+    "contracts": {
+        "DProxyAdmin": "0xE1a0589c93C1cf9369301c01507916eec21dE158",
+        "TestToken": {
+            "proxy": "0x279621852A3b59984B9563F9A94B31DA9A4523d8",
+            "impl": "0xd04a7F5a34e9894C81d547B8c656D7389e5edE5b"
+        }
+    },
+    "mapping": {},
+    "roles": {
+        "TestToken": {
+            "MINTER_ROLE": []
+        }
+    },
+    "config": {}
+}

@@ -7,8 +7,6 @@ require("hardhat-gas-reporter");
 require("hardhat-tracer");
 require("@openzeppelin/hardhat-upgrades");
 
-const chains = require("./chains");
-
 /** @type import('hardhat/config').HardhatUserConfig */
 const config = {
   solidity: {
@@ -40,21 +38,39 @@ const config = {
       chainId: 1337,
       allowUnlimitedContractSize: true,
     },
-
-    "soneium-dev": chains.soneium.testnet,
-    "soneium-prod": chains.soneium.mainnet,
+    "defiverse-testnet": {
+      chainId: 17117,
+      url: "https://rpc-testnet.defi-verse.org/",
+      accounts: [process.env.DEPLOY_PRIVATE_KEY_TESTNET],
+      gasPrice: 50000000000,
+    },
+    "defiverse-mainnet": {
+      chainId: 16116,
+      url: "https://rpc.defi-verse.org/",
+      accounts: [process.env.DEPLOY_PRIVATE_KEY_MAINNET],
+      gasPrice: 10000000000000,
+    },
   },
   etherscan: {
     apiKey: {
-      "soneium-prod": "no key",
+      "defiverse-testnet": "no key",
+      "defiverse-mainnet": "no key",
     },
     customChains: [
       {
-        network: "soneium-prod",
-        chainId: 1868,
+        network: "defiverse-testnet",
+        chainId: 17117,
         urls: {
-          apiURL: "https://soneium.blockscout.com/api",
-          browserURL: "https://soneium.blockscout.com",
+          apiURL: "https://scan-testnet.defi-verse.org/api",
+          browserURL: "https://scan-testnet.defi-verse.org",
+        },
+      },
+      {
+        network: "defiverse-mainnet",
+        chainId: 16116,
+        urls: {
+          apiURL: "https://scan.defi-verse.org/api",
+          browserURL: "https://scan.defi-verse.org",
         },
       },
     ],

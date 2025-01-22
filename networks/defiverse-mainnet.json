@@ -1,0 +1,16 @@
+{
+    "contracts": {
+        "DProxyAdmin": "",
+        "TestToken": {
+            "proxy": "",
+            "impl": ""
+        }
+    },
+    "mapping": {},
+    "roles": {
+        "TestToken": {
+            "MINTER_ROLE": []
+        }
+    },
+    "config": {}
+}

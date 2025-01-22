@@ -5,9 +5,8 @@
   "scripts": {
     "clean": "npx hardhat clean",
     "compile": "npx hardhat compile && node scripts/exportAbi.js",        
-    "deploy:dev:soneium": "npx hardhat run --network soneium-dev scripts/deploy/index.js",            
-    "deploy:prod:soneium": "npx hardhat run --network soneium-prod scripts/deploy/index.js",        
-    "verify:mainnet": "npx hardhat verify --network soneium-prod 0xbB821faB1c3c9F95f168217Cba40E430A4CF89a0",
+    "deploy:testnet:defiverse": "npx hardhat run --network defiverse-testnet scripts/deploy/index.js",            
+    "deploy:mainnet:defiverse": "npx hardhat run --network defiverse-mainnet scripts/deploy/index.js",            
     "test": "npx hardhat test"
   },
   "repository": {
