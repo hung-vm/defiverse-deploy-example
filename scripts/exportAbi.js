@@ -25,4 +25,4 @@ const exportAbis = function (contracts, subfolder, outputAbiFolder = "./abi") {
   );
 };
 
-exportAbis(["DogToken"], "./");
+exportAbis(["TestToken"], "./");
